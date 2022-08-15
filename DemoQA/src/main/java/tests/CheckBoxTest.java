@@ -24,6 +24,7 @@ public class CheckBoxTest extends TestCase{
 		CheckBoxPage checkBoxPage=elementsPage.clickOnCheckBox();
 		checkBoxPage.clickHome();
 		checkBoxPage.clickAll();
+		
 		checkBoxPage.verifyCheckAll(checkBoxPage.lbDesktopElement);
 		checkBoxPage.verifyCheckAll(checkBoxPage.lbDocumentsElement);
 		checkBoxPage.verifyCheckAll(checkBoxPage.lbDownloadsElement);
