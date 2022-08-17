@@ -7,6 +7,7 @@ public class TestBase {
 	public void openBrowser()
 	{
 		System.setProperty("webdriver.chrome.driver", "/Users/nguyennhatlinh/Downloads/06_AutoationProject/01Tools/chromedriver");
+		driver =new ChromeDriver();
 		//get link
 		driver.get("https://demoqa.com/");
 		//mo rong kich thuoc trinh duyet
