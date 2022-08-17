@@ -35,6 +35,7 @@ public class TextBoxTest extends TestCase{
 			String userEmail = "Linhgmail.com";
 			String currentAddress = "Ha Noi";
 			String permanentAddress = "Viet Nam";
+			
 
 			HomePage homePage = new HomePage(testBase.driver);
 			homePage.scroll();
