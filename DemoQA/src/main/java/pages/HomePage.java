@@ -21,4 +21,9 @@ public class HomePage  extends Page{
 		return new ElementsPage(driver);
 		
 	}
+	public FormsPage clickOnForm()
+	{
+		driver.findElement(By.xpath("//h5[text()='Forms']")).click();
+		return new FormsPage(driver);
+	}
 }
