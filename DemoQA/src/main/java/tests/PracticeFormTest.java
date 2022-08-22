@@ -18,14 +18,16 @@ public class PracticeFormTest extends TestCase {
 		String lastName= "Nhat";
 		String userEmail= "linh@gmail.com";
 		String userNumber= "0962742580";
+		String dateOfBirth= "16 Nov 1996";
 		String currentAddress= "HaNoi";
 		
 		HomePage homePage = new HomePage(testBase.driver);
 		homePage.scroll();
 		FormsPage formsPage=homePage.clickOnForm();
 		PracticeFormPage practiceFormsPage=formsPage.clickOnPracticeForm();
-		practiceFormsPage.inputData(firstName, lastName, userEmail, userNumber, currentAddress);
 		practiceFormsPage.zoomout();
+		practiceFormsPage.inputData(firstName, lastName, userEmail, userNumber, currentAddress);
+		practiceFormsPage.inputDate(dateOfBirth);
 		practiceFormsPage.clickOnSubmit();
 		
 
