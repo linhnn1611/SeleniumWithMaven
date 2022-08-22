@@ -23,61 +23,68 @@ public class PracticeFormPage extends Page {
 //	public By birthday = By.id("dateOfBirthInput");
 //	public By lbCurrentAddress = By.id("currentAddress");
 
-	public void inputData(String firstName, String lastName, String email, String phone,
-			String currentAddress) {
+	public void inputData(String firstName, String lastName, String email, String phone, String currentAddress) {
 		driver.findElement(By.id("firstName")).sendKeys(firstName);
 		driver.findElement(By.id("lastName")).sendKeys(lastName);
 		driver.findElement(By.id("userEmail")).sendKeys(email);
 		driver.findElement(By.xpath("//input[@id='gender-radio-1']/..")).click();
 		driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).sendKeys(phone);
-//		driver.findElement(By.id("subjectsContainer")).sendKeys();
-//		driver.findElement(By.xpath("//input[@id='hobbies-checkbox-1']/..")).click();
+		driver.findElement(By.xpath("//input[@type='file']")).sendKeys("/Users/nguyennhatlinh/Downloads/IMG_1388.JPG");
 		driver.findElement(By.id("currentAddress")).sendKeys(currentAddress);
-//		driver.findElement(By.id("state")).isSelected();
-//		driver.findElement(By.id("city")).isSelected();
 	}
 
 	/**
 	 * 
 	 * @param date: dd MMM yyyy
-	 * @return 
+	 * @return
 	 */
 	public void inputDate(String date) {
 		String[] splittedDate = date.split(" ");
 		driver.findElement(By.xpath("//input[@id='dateOfBirthInput']/..")).click();
-		WebElement monthElement= driver.findElement(By.xpath("//div/div[1]/select"));
-		Select month=new Select(monthElement);
+		WebElement monthElement = driver.findElement(By.xpath("//div/div[1]/select"));
+		Select month = new Select(monthElement);
 		month.selectByVisibleText(splittedDate[1]);
-		WebElement yearElement= driver.findElement(By.xpath("//div/div[1]/select"));
-		Select year=new Select(yearElement);
+		WebElement yearElement = driver.findElement(By.xpath("//div/div[1]/select"));
+		Select year = new Select(yearElement);
 		year.selectByVisibleText(splittedDate[2]);
-		String day=splittedDate[0];
-		String newDay ="";
-		if(day.charAt(0)=='0') {
+		String day = splittedDate[0];
+		String newDay = "";
+		if (day.charAt(0) == '0') {
 			newDay = day.replace("0", "");
 		} else {
 			newDay = day;
 		}
 		List<WebElement> dayList = driver.findElements(By.xpath("//div[@class='react-datepicker__week']/div"));
 		int[] index = new int[2];
-		int i =0;
-		for (WebElement e: dayList)
-		{
-			if(e.getText().equals("1"))
-			{
-				index[i]= dayList.indexOf(e);
+		int i = 0;
+		for (WebElement e : dayList) {
+			if (e.getText().equals("1")) {
+				index[i] = dayList.indexOf(e);
 				i++;
 			}
 		}
-		
-		for (int k =index[0]; k< index[1]-1; k++) {
-			if(dayList.get(k).getText().equals(newDay)) {
+
+		for (int k = index[0]; k < index[1] - 1; k++) {
+			if (dayList.get(k).getText().equals(newDay)) {
 				dayList.get(k).click();
 			}
-			
+
 		}
 	}
 
+	public void selectSubject(String subject)
+	{
+		driver.findElement(By.xpath("//input[@id='subjectsInput']/..")).sendKeys(subject);
+		driver.findElement(By.xpath("//input[@id='subjectsInput']/..")).sendKeys(Keys.ENTER);
+	}
+
+	public void selectStateAndCity()
+	{
+		driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[1]")).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[1]")).sendKeys(Keys.ENTER);
+	}
 //Zoomout page
 	public void zoomout() {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;

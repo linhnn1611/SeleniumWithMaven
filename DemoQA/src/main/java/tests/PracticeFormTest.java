@@ -20,6 +20,7 @@ public class PracticeFormTest extends TestCase {
 		String userNumber= "0962742580";
 		String dateOfBirth= "16 Nov 1996";
 		String currentAddress= "HaNoi";
+		String subject="Maths";
 		
 		HomePage homePage = new HomePage(testBase.driver);
 		homePage.scroll();
@@ -28,6 +29,8 @@ public class PracticeFormTest extends TestCase {
 		practiceFormsPage.zoomout();
 		practiceFormsPage.inputData(firstName, lastName, userEmail, userNumber, currentAddress);
 		practiceFormsPage.inputDate(dateOfBirth);
+		practiceFormsPage.selectSubject(subject);
+		practiceFormsPage.selectStateAndCity();
 		practiceFormsPage.clickOnSubmit();
 		
 
