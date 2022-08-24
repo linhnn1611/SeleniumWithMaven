@@ -1,5 +1,6 @@
 package common;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestBase {
