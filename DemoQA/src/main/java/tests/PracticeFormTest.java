@@ -19,7 +19,7 @@ public class PracticeFormTest extends TestCase {
 		String lastName= "Nhat";
 		String userEmail= "linh@gmail.com";
 		String userNumber= "0962742580";
-		String dateOfBirth= "16 November 2019";
+		String dateOfBirth= "16 November 2022";
 		String currentAddress= "HaNoi";
 		String subject="Maths";
 		String gender="Female";
@@ -32,21 +32,21 @@ public class PracticeFormTest extends TestCase {
 		FormsPage formsPage=homePage.clickOnForm();
 		PracticeFormPage practiceFormsPage=formsPage.clickOnPracticeForm();
 		practiceFormsPage.inputData(firstName, lastName, userEmail, userNumber, currentAddress, gender, hobbies);
-		practiceFormsPage.inputDate(dateOfBirth);
+//		practiceFormsPage.inputDate(dateOfBirth);
 		practiceFormsPage.selectSubject(subject);
 		practiceFormsPage.selectStateAndCity(state, city);
 		homePage.scroll();
 		practiceFormsPage.clickOnSubmit();
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbStudentName),firstName+" "+lastName);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbStudentEmail),userEmail);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbGender),gender);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbMobile),userNumber);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbDateofBirth),dateOfBirth);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbSubjects),subject);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbHobbies),hobbies);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbStudentName),firstName+" "+lastName);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbStudentEmail),userEmail);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbGender),gender);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbMobile),userNumber);
+//		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbDateofBirth),dateOfBirth);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbSubjects),subject);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbHobbies),hobbies);
 //		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbPicture),);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbAddress),currentAddress);
-		Assert.assertEquals(practiceFormsPage.getDataInThankForFormAfterSubmit(practiceFormsPage.lbStateandCity),state +" and "+city);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbAddress),currentAddress);
+		Assert.assertEquals(practiceFormsPage.getDataSubmit(practiceFormsPage.lbStateandCity),state +" "+city);
 		
 
 	}

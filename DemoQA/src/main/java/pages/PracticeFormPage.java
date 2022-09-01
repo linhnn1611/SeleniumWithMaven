@@ -15,33 +15,35 @@ public class PracticeFormPage extends Page {
 	public PracticeFormPage(WebDriver dr) {
 		super(dr);
 	}
-	
-	public String genderXpath="//*[text()='{@param}']/..";
-	public String hobbiesXpath="//*[text()='{@param}']/..";
-//Thanks Form
-	public By lbStudentName=By.xpath("//td[text()='Student Name']/following-sibling::td");
-	public By lbStudentEmail=By.xpath("//td[text()='Student Email']/following-sibling::td");
-	public By lbGender=By.xpath("//td[text()='Gender']/following-sibling::td");
-	public By lbMobile=By.xpath("//td[text()='Mobile']/following-sibling::td");
-	public By lbDateofBirth=By.xpath("//td[text()='Date of Birth']/following-sibling::td");
-	public By lbSubjects=By.xpath("//td[text()='Subjects']/following-sibling::td");
-	public By lbHobbies=By.xpath("//td[text()='Hobbies']/following-sibling::td");
-	public By lbPicture=By.xpath("//td[text()='Picture']/following-sibling::td");
-	public By lbAddress=By.xpath("//td[text()='Address']/following-sibling::td");
-	public By lbStateandCity=By.xpath("//td[text()='State and City']/following-sibling::td");
 
-	public void inputData(String firstName, String lastName, String email, String phone, String currentAddress, String gender, String hobbies) {
+	public String genderXpath = "//*[text()='{@param}']/..";
+	public String hobbiesXpath = "//*[text()='{@param}']/..";
+//Thanks Form
+	public By lbStudentName = By.xpath("//td[text()='Student Name']/following-sibling::td");
+	public By lbStudentEmail = By.xpath("//td[text()='Student Email']/following-sibling::td");
+	public By lbGender = By.xpath("//td[text()='Gender']/following-sibling::td");
+	public By lbMobile = By.xpath("//td[text()='Mobile']/following-sibling::td");
+	public By lbDateofBirth = By.xpath("//td[text()='Date of Birth']/following-sibling::td");
+	public By lbSubjects = By.xpath("//td[text()='Subjects']/following-sibling::td");
+	public By lbHobbies = By.xpath("//td[text()='Hobbies']/following-sibling::td");
+	public By lbPicture = By.xpath("//td[text()='Picture']/following-sibling::td");
+	public By lbAddress = By.xpath("//td[text()='Address']/following-sibling::td");
+	public By lbStateandCity = By.xpath("//td[text()='State and City']/following-sibling::td");
+
+	public void inputData(String firstName, String lastName, String email, String phone, String currentAddress,
+			String gender, String hobbies) {
 		driver.findElement(By.id("firstName")).sendKeys(firstName);
 		driver.findElement(By.id("lastName")).sendKeys(lastName);
 		driver.findElement(By.id("userEmail")).sendKeys(email);
-		driver.findElement(createXpathByText(genderXpath,gender)).click();
+		// driver.findElement(createXpathByText(genderXpath, gender)).click();
+		driver.findElement(By.xpath("//input[@id='gender-radio-1']/..")).click();
 		driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).sendKeys(phone);
-		driver.findElement(createXpathByText(hobbiesXpath,hobbies)).click();
+		driver.findElement(createXpathByText(hobbiesXpath, hobbies)).click();
 		setWindow();
 		driver.findElement(By.xpath("//input[@type='file']")).sendKeys("/Users/nguyennhatlinh/Downloads/IMG_1388.JPG");
 		driver.findElement(By.id("currentAddress")).sendKeys(currentAddress);
 	}
- 
+
 	/**
 	 * 
 	 * @param date: dd MMM yyyy
@@ -79,6 +81,7 @@ public class PracticeFormPage extends Page {
 			}
 		}
 	}
+
 	public void inputDate2(String date) {
 		String[] splittedDate = date.split(" ");
 		driver.findElement(By.xpath("//input[@id='dateOfBirthInput']/..")).click();
@@ -106,12 +109,10 @@ public class PracticeFormPage extends Page {
 	}
 
 	public void selectStateAndCity(String state, String city) {
-		driver.findElement(By.xpath("//*[@id='state']/div/div[1]")).click();
-		driver.findElement(By.xpath("//*[@id='state']/div/div[1]")).sendKeys(state);
-		driver.findElement(By.xpath("//*[@id='state'/div/div[1]")).sendKeys(Keys.ENTER);
-		driver.findElement(By.xpath("//*[@id='city']/div/div[1]")).click();
-		driver.findElement(By.xpath("//*[@id='city']/div/div[1]")).sendKeys(city);
-		driver.findElement(By.xpath("//*[@id='city']/div/div[1]")).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//input[@id='react-select-3-input']")).sendKeys(state);
+		driver.findElement(By.xpath("//input[@id='react-select-3-input']")).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//input[@id='react-select-4-input']")).sendKeys(city);
+		driver.findElement(By.xpath("//input[@id='react-select-4-input']")).sendKeys(Keys.ENTER);
 	}
 
 //Zoomout page
@@ -119,20 +120,27 @@ public class PracticeFormPage extends Page {
 //		JavascriptExecutor executor = (JavascriptExecutor) driver;
 //		executor.executeScript("document.body.style.zoom = '0.7'");
 //	}
-	
-	
+
 	public void clickOnSubmit() {
 		WebElement e = driver.findElement(By.id("submit"));
 		e.submit();
 	}
-	
-	public String getDataInThankForFormAfterSubmit(By locator) {
-		return driver.findElement(locator).getText();	
+
+	public String getDataSubmit(By locator) {
+		return driver.findElement(locator).getText();
 	}
-	
-	public By createXpathByText(String locatorXpath,String text) {
-		String elementXpath=locatorXpath.replace("{@param}", text);
+
+//	public boolean getDataSubmit(By locator, String expectedData) {
+//		boolean result = false;
+//		String actualData = driver.findElement(locator).getText();
+//		if (actualData.equals(expectedData)) {
+//			result = true;
+//		}
+//		return result;
+//	}
+	public By createXpathByText(String locatorXpath, String text) {
+		String elementXpath = locatorXpath.replace("{@param}", text);
 		return By.xpath(elementXpath);
-		}
+	}
 
 }
