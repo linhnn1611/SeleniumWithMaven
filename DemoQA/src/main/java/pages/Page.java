@@ -13,4 +13,7 @@ public class Page {
 		Dimension dm= new Dimension(700,1000);
 		driver.manage().window().setSize(dm);
 	}
+	public void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
 }

@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="tests.PracticeFormTest" class="method navigator-link" hash-for-method="submitPractice">submitPractice</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="tests.WebTableTest" class="method navigator-link" hash-for-method="verifyTextAfterSubmit(Lonh, Hoa, linh@gmail.com, 20, 2000, bonee)">verifyTextAfterSubmit(Lonh, Hoa, linh@gmail.com, 20, 2000, bonee)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -122,18 +122,23 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">tests.PracticeFormTest</span>
+              <span class="class-name">tests.WebTableTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="submitPractice">
-                  </a> <!-- submitPractice -->
-                  <span class="method-name">submitPractice</span>
-                  <div class="stack-trace">junit.framework.ComparisonFailure: expected:&lt;[]&gt; but was:&lt;[linh@gmail.com]&gt;
-	at junit.framework.Assert.assertEquals(Assert.java:85)
-	at junit.framework.Assert.assertEquals(Assert.java:91)
-	at tests.PracticeFormTest.submitPractice(PracticeFormTest.java:41)
+                  <a name="verifyTextAfterSubmit(Lonh, Hoa, linh@gmail.com, 20, 2000, bonee)">
+                  </a> <!-- verifyTextAfterSubmit(Lonh, Hoa, linh@gmail.com, 20, 2000, bonee) -->
+                  <span class="method-name">verifyTextAfterSubmit</span>
+                  <span class="parameters">(Lonh, Hoa, linh@gmail.com, 20, 2000, bonee)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Lonh] but found [Cierra]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at tests.WebTableTest.verifyTextAfterSubmit(WebTableTest.java:34)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -169,7 +174,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/lc/13sq9x8n6j79shtsd4dptt1h0000gn/T/testng-eclipse--2124409865/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/lc/13sq9x8n6j79shtsd4dptt1h0000gn/T/testng-eclipse-1624766723/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -178,7 +183,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.PracticeFormTest&quot;/&gt;
+      &lt;class name=&quot;tests.WebTableTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -220,14 +225,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'submitPractice')
-data.setCell(0, 2, 'tests.PracticeFormTest')
-data.setCell(0, 3, 735);
+data.setCell(0, 1, 'verifyTextAfterSubmit')
+data.setCell(0, 2, 'tests.WebTableTest')
+data.setCell(0, 3, 77570);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 735 ms</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -253,7 +258,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.PracticeFormTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.WebTableTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">openBrowser</span>
                 <span class="method-start">0 ms</span>
@@ -261,8 +266,8 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">submitPractice</span>
-                <span class="method-start">6019 ms</span>
+                <span class="method-name">verifyTextAfterSubmit(Lonh, Hoa, linh@gmail.com, 20, 2000, bonee)</span>
+                <span class="method-start">12486 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
