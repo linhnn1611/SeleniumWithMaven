@@ -3,6 +3,7 @@ package pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,9 +15,9 @@ public class WebTablePage extends Page {
 	public By firstName = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[1]");
 	public By lastName = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
 	public By age = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
-	public By Email = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
-	public By Salary = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
-	public By Department = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
+	public By email = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
+	public By salary = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
+	public By department = By.xpath("(//div[@class='rt-tbody']//div[@role='row'])[1]/div[2]");
 
 	public void inputSearchKeyWord(String searchKeyWord) {
 		driver.findElement(By.id("searchBox")).sendKeys(searchKeyWord);
@@ -71,7 +72,7 @@ public class WebTablePage extends Page {
 	}
 
 	public void clickonAdd() {
-		driver.findElement(By.id("addNewRecordButton")).click();
+		driver.findElement(By.xpath("//button[@id='addNewRecordButton']")).click();
 	}
 
 	public void inputDataRegistrationForm(String firstName, String lastName, String email, String age, String salary,
@@ -95,16 +96,17 @@ public class WebTablePage extends Page {
 	}
 
 	public RegistrationEntity getRegistration(String searchKeyword) {
-		RegistrationEntity registration= new RegistrationEntity();
+		RegistrationEntity registration = new RegistrationEntity();
 		inputSearchKeyWord(searchKeyword);
-		List <WebElement> firstRowElements=driver.findElements(By.xpath("//*[@role='grid']/div[2]/div[1]//div[@role='gridcell']"));	
-			registration.setFirstName(firstRowElements.get(0).getText());
-			registration.setLastName(firstRowElements.get(1).getText());
-			registration.setEmail(firstRowElements.get(2).getText());
-			registration.setAge(firstRowElements.get(3).getText());
-			registration.setSalary(firstRowElements.get(4).getText());
-			registration.setDepartment(firstRowElements.get(5).getText());
-			return registration;
+		List<WebElement> firstRowElements = driver
+				.findElements(By.xpath("//*[@role='grid']/div[2]/div[1]//div[@role='gridcell']"));
+		registration.setFirstName(firstRowElements.get(0).getText());
+		registration.setLastName(firstRowElements.get(1).getText());
+		registration.setEmail(firstRowElements.get(2).getText());
+		registration.setAge(firstRowElements.get(3).getText());
+		registration.setSalary(firstRowElements.get(4).getText());
+		registration.setDepartment(firstRowElements.get(5).getText());
+		return registration;
 	}
 
 	public void deletedDataByKeyWord() {
