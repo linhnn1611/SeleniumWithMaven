@@ -36,19 +36,19 @@ public class WebTableTest extends TestCase {
 		webTablePage.clickonAdd();
 		webTablePage.inputDataRegistrationForm(firstName, lastName, email, age, salary, department);
 		webTablePage.inputSearchKeyWord(firstName);
-//		Assert.assertEquals(webTablePage.getRegistration(firstName).getFirstName(), firstName);
+		Assert.assertEquals(webTablePage.getRegistration(firstName).getFirstName(), firstName);
 //		Assert.assertEquals(webTablePage.getRegistration(firstName).getLastName(), lastName);
 //		Assert.assertEquals(webTablePage.getRegistration(firstName).getAge(), age);
 //		Assert.assertEquals(webTablePage.getRegistration(firstName).getEmail(), email);
 //		Assert.assertEquals(webTablePage.getRegistration(firstName).getSalary(), salary);
 //		Assert.assertEquals(webTablePage.getRegistration(firstName).getDepartment(), department);
-		webTablePage.verifyDataAfterSubmit(webTablePage.firstName, firstName);
-		webTablePage.verifyDataAfterSubmit(webTablePage.lastName, lastName);
-		webTablePage.verifyDataAfterSubmit(webTablePage.email, email);
-		webTablePage.verifyDataAfterSubmit(webTablePage.age, age);
-		webTablePage.verifyDataAfterSubmit(webTablePage.salary, salary);
-		webTablePage.verifyDataAfterSubmit(webTablePage.department, department);
-		webTablePage.deletedDataByKeyWord();
+//		webTablePage.verifyDataAfterSubmit(webTablePage.firstName, firstName);
+//		webTablePage.verifyDataAfterSubmit(webTablePage.lastName, lastName);
+//		webTablePage.verifyDataAfterSubmit(webTablePage.email, email);
+//		webTablePage.verifyDataAfterSubmit(webTablePage.age, age);
+//		webTablePage.verifyDataAfterSubmit(webTablePage.salary, salary);
+//		webTablePage.verifyDataAfterSubmit(webTablePage.department, department);
+//		webTablePage.deletedDataByKeyWord();
 	}
 
 //	 tach data ra khoi testcase

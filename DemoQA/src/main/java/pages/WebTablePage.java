@@ -97,7 +97,6 @@ public class WebTablePage extends Page {
 
 	public RegistrationEntity getRegistration(String searchKeyword) {
 		RegistrationEntity registration = new RegistrationEntity();
-		inputSearchKeyWord(searchKeyword);
 		List<WebElement> firstRowElements = driver
 				.findElements(By.xpath("//*[@role='grid']/div[2]/div[1]//div[@role='gridcell']"));
 		registration.setFirstName(firstRowElements.get(0).getText());

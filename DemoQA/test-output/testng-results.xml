@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-23T11:58:45 ICT" name="Default suite" finished-at="2022-09-23T11:58:58 ICT" duration-ms="13225">
+  <suite started-at="2022-09-23T12:04:39 ICT" name="Default suite" finished-at="2022-09-23T12:04:53 ICT" duration-ms="13155">
     <groups>
     </groups>
-    <test started-at="2022-09-23T11:58:45 ICT" name="Default test" finished-at="2022-09-23T11:58:58 ICT" duration-ms="13225">
+    <test started-at="2022-09-23T12:04:39 ICT" name="Default test" finished-at="2022-09-23T12:04:53 ICT" duration-ms="13155">
       <class name="tests.WebTableTest">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:tests.WebTableTest@1fe20588]" started-at="2022-09-23T11:58:45 ICT" name="openBrowser" finished-at="2022-09-23T11:58:53 ICT" duration-ms="8608" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:tests.WebTableTest@1fe20588]" started-at="2022-09-23T12:04:39 ICT" name="openBrowser" finished-at="2022-09-23T12:04:49 ICT" duration-ms="9963" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="verifyTextAfterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.WebTableTest@1fe20588]" started-at="2022-09-23T11:58:53 ICT" name="verifyTextAfterSubmit" data-provider="RegistrationData" finished-at="2022-09-23T11:58:58 ICT" duration-ms="4603" status="PASS">
+        <test-method signature="verifyTextAfterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.WebTableTest@1fe20588]" started-at="2022-09-23T12:04:49 ICT" name="verifyTextAfterSubmit" data-provider="RegistrationData" finished-at="2022-09-23T12:04:53 ICT" duration-ms="3178" status="PASS">
           <params>
             <param index="0">
               <value>
